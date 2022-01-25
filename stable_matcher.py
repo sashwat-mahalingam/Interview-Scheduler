@@ -1,20 +1,22 @@
 import pandas
 
+class InterviewAssigner:
+    N = 0
+
 class InterviewSlot:
     """
     Class to track an interview slot and its preferences.
     """
 
     def __init__(self):
-        self.preferences = {}
+        self.preferences = [None] * (InterviewAssigner.N + 1)
     
     def note_candidate(self, cand_id, ranking):
         """
         Note candidate by how they rank you.
         """
-
-        if ranking not in self.preferences:
-            self.preferences[ranking] = []
+        if self.preferences[ranking]:
+            self.preferences[ranking] = [None] * N
         self.preferences[ranking].append(cand_id)
     
     def consolidate_prefs(self):
@@ -24,12 +26,5 @@ class InterviewSlot:
         self.final_prefs = [None] * InterviewAssigner.N
 
         for key in sorted(self.preferences.keys()):
-            self.final_prefs[]
-
-class InterviewAssigner:
-
+            self.final_prefs.extend(self.preferences[key])
     
-
-    def __init__(self, data, N, K):
-        InterviewAssigner
-        
