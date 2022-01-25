@@ -12,7 +12,7 @@ The program was implemented in Python, and the core libraries used in this imple
 
 ## General input constraints
 * There exists as many interview slots as candidates.
-* All candidates have the same number of preferences, though this number can be less than the slots available (i.e. candidates can give the top `X` out of `N` available slots).
+* All candidates have the same number of preferences, though this number can be less than the slots available (i.e. candidates can give the top `X` out of `N` available slots). These preferences must be ordered and unique within the context of a single candidate.
 * Each candidate is, for the sake of avoiding ambiguity, identified by an ID.
 
 ## Format of the two CSV inputs:
