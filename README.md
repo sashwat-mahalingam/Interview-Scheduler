@@ -1,4 +1,4 @@
-# Interview-Scheduler
+# Interview Scheduler
 
 ## Overview
 An application that can optimally schedule interviews for candidates based on their preferences and available slots.
