@@ -17,7 +17,7 @@ The program was implemented in Python, and the core libraries used in this imple
 
 ## Format of the two CSV inputs:
 * `slots.csv` - a CSV that is a table of available interview slots. The columns for this CSV must be the start time and the end time, in this order. Headers **shouldn't** be provided. For a sample, please examine sample_slots.csv, provided in `/sample_inputs` above.
-* `preferences.csv` - a CSV table of the candidate preferences of the interview slots. Supposing we had `N` candidates and `K` preferences per candidate, the dimension of this table must be `N` rows and `K + 1` columns.\\
+* `preferences.csv` - a CSV table of the candidate preferences of the interview slots. Supposing we had `N` candidates and `K` preferences per candidate, the dimension of this table must be `N` rows and `K + 1` columns.\ \
    Thus, for each row, there must be the candidate ID column, followed by the `X <= N` preferences (in order of **highest to lowest**) for that candidate. This `X` must be constant amongst all candidates. Again, headers **shouldn't** be provided.
 * **Both CSV inputs must be in a folder called `inputs`.**
 
