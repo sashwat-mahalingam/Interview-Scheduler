@@ -1,14 +1,18 @@
 # Interview Scheduler
 
 ## Overview
-An application that can optimally schedule interviews for candidates based on their preferences and available slots.
+This is an application that uses stable matching to optimally schedule interview slots for candidates based on their preferences and available slots.
 
 The program is given an input of interview slots and how each candidate ranks their top preferred slot timings. The output will be an optimal scheduling of the candidates in their interview slots. 
 
 This means candidates get their preferred slots as much as possible. However, if necessary, some candidates will be scheduled outside (but close to) their preferences.
 
+## Development
+The program was implemented in Python, and the core libraries used in this implementation are Pandas for the data processing and output. The main algorithm used was Gale-S
+Shapley's stable matching algorithm, with the candidates as the "proposers" to ensure candidate-optimal matching. 
+
 ## Usage
-The program was implemented in Python, and the core libraries used in this implementation are Pandas for the data processing and output. As such, this script is run from the CLI. The input is two CSV files, one for available timings and another for candidate preferences. The output is a CSV of the optimal scheduling.
+This script is run from the CLI. The input is two CSV files, one for available timings and another for candidate preferences. The output is a CSV of the optimal scheduling.
 
 ## General input constraints
 * There exists as many interview slots as candidates.
