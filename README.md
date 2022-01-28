@@ -26,4 +26,4 @@ The program was implemented in Python, and the core libraries used in this imple
 `schedule.csv` is the name of the output CSV, created under `outputs`. It will contain, **without headers**, the slot start and end time columns, followed by the matched candidate (using ID) column. Thus, each row is a scheduled interview for one of the `N` candidates.
 
 ## To execute:
-Simply run the bash script (`final_program.bash`) provided above.
+Simply run `python main.py`.
