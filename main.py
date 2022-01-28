@@ -1,21 +1,18 @@
-import pref_assign, interview_classes, stable_matcher, pandas as pd
+import pref_assign, interview_classes, stable_matcher, postprocessor, preprocessor
 
-df = pd.read_excel('test_file.xlsx', header=None)
-slots, candidates = pref_assign.assign(df, df.shape[0], df.shape[1])
+"""Run the main program to process, assign, match, and post-process our inputs.
+"""
 
-slot_prefs = pd.DataFrame([slot.final_prefs for slot in slots])
-candidate_prefs = pd.DataFrame([candidate.final_prefs for candidate in candidates])
+# Preprocess
+slots_df, pref_df, N, K = preprocessor.parse_csv()
+cand_series, preferences = pref_df[0], pref_df[1:]
 
-w = pd.ExcelWriter('slot_prefs.xlsx')
-slot_prefs.to_excel(w)
-w.close()
+# Assign and make interview objects
+slots, candidates = pref_assign.assign(preferences, N, K)
 
-w = pd.ExcelWriter('candidate_prefs.xlsx')
-candidate_prefs.to_excel(w)
-w.close()
+# Stable match
+matchings = stable_matcher.stable_matcher(slots, candidates, N)
 
-results = stable_matcher.stable_matcher(slots, candidates, df.shape[0])
-w = pd.ExcelWriter('schedule.xlsx')
+# Post process
+postprocessor.post_process(matchings, cand_series, slots_df)
 
-pd.DataFrame(results).to_excel(w)
-w.close()

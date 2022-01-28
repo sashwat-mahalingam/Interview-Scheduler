@@ -30,6 +30,6 @@ def stable_matcher(slots, candidates, N):
     final_ans = [None] * N
 
     for i in range(N):
-        final_ans[i] = [i, slots[i].current_match]
+        final_ans[i] = slots[i].current_match
     
     return final_ans
