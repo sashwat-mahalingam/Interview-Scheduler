@@ -8,11 +8,11 @@ def post_process(slot_candidate_list, cand_series, slots_df):
     assignments = pd.DataFrame(slot_candidate_list)
     assignments.columns = ['cand_ind']
 
-    assignments = pd.concat(slots_df, assignments, axis = 1)
+    assignments = pd.concat([slots_df, assignments], axis = 1)
     
-    assignments['cand_id'] = assignments['cand_id'].apply(lambda id: cand_series[id])
+    assignments['cand_ind'] = assignments['cand_ind'].apply(lambda id: cand_series[id])
 
-    assignments.to_csv('schedule.csv')
+    assignments.to_csv('schedule.csv', header=None, index=None)
 
 
 

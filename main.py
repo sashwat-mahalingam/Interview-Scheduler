@@ -5,7 +5,7 @@ import pref_assign, interview_classes, stable_matcher, postprocessor, preprocess
 
 # Preprocess
 slots_df, pref_df, N, K = preprocessor.parse_csv()
-cand_series, preferences = pref_df[0], pref_df[1:]
+cand_series, preferences = pref_df.iloc[:, 0], pref_df.iloc[:, 1:]
 
 # Assign and make interview objects
 slots, candidates = pref_assign.assign(preferences, N, K)
