@@ -14,6 +14,7 @@ The program was implemented in Python, and the core libraries used in this imple
 * There exists as many interview slots as candidates.
 * All candidates have the same number of preferences, though this number can be less than the slots available (i.e. candidates can give the top `X` out of `N` available slots). These preferences must be ordered and unique within the context of a single candidate.
 * Each candidate is, for the sake of avoiding ambiguity, identified by an ID.
+* All slots are the same duration and none overlap.
 
 ## Format of the two CSV inputs:
 * `slots.csv` - a CSV that is a table of available interview slots. The columns for this CSV must be the start time and the end time, in this order. Headers **shouldn't** be provided. For a sample, please examine sample_slots.csv, provided in `/sample_inputs` above. Times must be in 24-hour, HH:MM string format.
