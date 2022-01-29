@@ -16,4 +16,7 @@ One possible approximation to obtain the best "average level" of matching is sta
 Runtime Complexity: `O(N²)`
 Space Complexity: `Θ(N²)`
 
-## Approach 2: 
+## Approach 2a: Local Search - Hill-Climbing
+
+## Approach 2b: Local Search - Simulated Annealing
+
