@@ -13,7 +13,7 @@ def parse_csv():
 
     # Label columns and map the indices for use in post-processing
     slots_df.columns = ['start_time', 'end_time']
-    pref_df.columns = ['cand_id'] + [str(i) + 'pref' for i in range(1, K + 1)]
+    pref_df.columns = ['indiv_id'] + [str(i) + 'pref' for i in range(1, K + 1)]
 
     slots_df.sort_values(by = 'start_time')
 

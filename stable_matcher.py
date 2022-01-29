@@ -1,6 +1,6 @@
-import interview_classes
+import slot_indiv_classes
 
-def stable_matcher(slots, candidates, N):
+def stable_matcher(slots, individuals, N):
     """
     Input: slots with their preferences and candidates with their preferences. Matches to be interviewee-optimal using Gale-Shapley algorithm.
     """
@@ -10,7 +10,7 @@ def stable_matcher(slots, candidates, N):
     while proposals_queue:
         # proposal stage
         for cand_id in proposals_queue:
-            slot = candidates[cand_id].propose()
+            slot = individuals[cand_id].propose()
             slots[slot].receive_offer(cand_id)
             slots_queue.add(slot)
         
