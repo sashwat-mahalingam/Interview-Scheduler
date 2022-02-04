@@ -56,8 +56,11 @@ def stable_matcher(slots, agents, N):
     for i in range(N):
         final_ans[i] = slots[i].current_match
     
-    return final_ans, agents
+    return final_ans
 
 def match(data, N, K):
+    """
+    To satisfy the matcher interface.
+    """
     slots, agents = assign(data, N, K)
     return stable_matcher(slots, agents, N)

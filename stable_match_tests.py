@@ -48,32 +48,26 @@ def general_framework(input_file, self:unittest.TestCase):
     verify_perfectness(self, matchings)
     verify_double_stability(self, matchings, slots, agents, N)
 
-class DeterministicTest(unittest.TestCase):
-
+class SmallDeterministicTest(unittest.TestCase):
     def runTest(self):
         """
-        Run all three tests.
-        """
-
-        self.small_test()
-       # self.med_test()
-       # self.large_test()
-    
-    def small_test(self):
-        """
-        Test on small set of inputs.
+        Test on small inputs.
         """
         general_framework('tests/small_determ.csv', self)
 
-    def med_test(self):
+class MediumDeterministicTest(unittest.TestCase):
+    def runTest(self):
         """
         Test on medium set of inputs.
         """
-    
-    def large_test(self):
+        general_framework('tests/medium_determ.csv', self)
+
+class LargeDeterministicTest(unittest.TestCase):
+    def runTest(self):
         """
         Test on large set of inputs.
         """
+        general_framework('tests/large_determ.csv', self)
 
 if __name__ == "__main__":
     unittest.main()
