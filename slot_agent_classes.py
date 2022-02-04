@@ -66,6 +66,11 @@ class Agent:
         """
         for elem in self.unassigned_prefs:
             self.final_prefs.append(elem)
+        
+        self.pref_mappings = [None] * Agent.N
+        
+        for i in range(Agent.N):
+            self.pref_mappings[self.final_prefs[i]] = i
 
         self.pref_queue = list(self.final_prefs)
         self.pref_queue.reverse()
@@ -82,3 +87,4 @@ class Agent:
         Propose to the highest-ranked, available slot.
         """
         return self.pref_queue.pop()
+
