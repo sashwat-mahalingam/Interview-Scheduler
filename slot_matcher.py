@@ -11,6 +11,8 @@ def final_func(pref_input, output_file, match_func):
 
     # match with whichever supplied matcher
     matchings = match_func(preferences, N, K)
-    postprocessor.post_process(matchings, output_file)
+
+    if output_file is not None:
+        postprocessor.post_process(matchings, output_file)
 
     return matchings
